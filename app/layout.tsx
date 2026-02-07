@@ -17,6 +17,10 @@ export const metadata = {
    verification: {
     google: "nNKuI2XYFZPj2T72QHx-xbbgiKJE4cqFEnhX5D3LIEk",
   },
+
+   icons: {
+    icon: "/logo.png", // ✅ favicon di sini
+  },
   openGraph: {
     title: "Mang Ipul - Jajanan Snack Enak & Lezat",
     description: "Berbagai macam jajanan snack lezat seperti makroni, mie, dan mie lidi pedas",
@@ -47,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </head>
       <body className={`${poppins.className} bg-gray-50`}>
         {children}
