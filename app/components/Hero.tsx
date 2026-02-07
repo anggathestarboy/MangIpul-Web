@@ -21,7 +21,7 @@ export default function Hero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              Resep Sederhana{" "}
+              Resep Sederhana,{" "}
               <span className="text-white">Rasa Istimewa</span>{" "}
             </h1>
             <p
