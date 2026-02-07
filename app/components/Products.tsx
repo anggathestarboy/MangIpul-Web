@@ -29,12 +29,12 @@ export default function Products() {
   }, [filteredProducts]);
 
   return (
-    <section id="products" className="py-16 bg-light">
+    <section id="products" className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-dark">Produk Unggulan Kami</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Pilih dari berbagai varian jajanan mie, mie lidi, dan makaroni yang kami sediakan.
+            Pilih dari berbagai varian yang kami sediakan.
           </p>
         </div>
 
@@ -69,12 +69,7 @@ export default function Products() {
                   alt={product.title}
                   className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
-                {product.bestSeller && (
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                    🔥 Best Seller
-                  </div>
-                )}
-                <div className="absolute top-4 left-4 bg-secondary text-dark px-3 py-1 rounded-full text-sm font-medium">
+                <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                   {product.category}
                 </div>
               </div>
@@ -87,9 +82,6 @@ export default function Products() {
                 </div>
                 <p className="mt-3 text-gray-600">{product.description}</p>
                 <div className="mt-4 flex justify-between items-center">
-                  <button className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-600 transition duration-300">
-                    + Keranjang
-                  </button>
                   <button className="px-4 py-2 border border-primary text-primary font-medium rounded-lg hover:bg-orange-50 transition duration-300">
                     Detail
                   </button>
@@ -99,19 +91,7 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Order CTA */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-dark mb-4">Ingin Pesan dalam Jumlah Besar?</h3>
-          <p className="text-gray-600 mb-6">
-            Untuk catering, acara, atau kebutuhan bisnis, kami menyediakan paket khusus dengan harga menarik.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-6 py-3 bg-dark text-white font-medium rounded-lg hover:bg-gray-800 transition duration-300 hover-lift"
-          >
-            📞 Hubungi Kami untuk Penawaran
-          </a>
-        </div>
+
       </div>
     </section>
   );

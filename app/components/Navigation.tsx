@@ -28,8 +28,8 @@ export default function Navigation() {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white shadow-md backdrop-blur-md bg-opacity-95' 
-        : 'bg-white/90 backdrop-blur-sm'
+        ? 'bg-white' 
+        : 'bg-white'
     }`}>
       <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -47,7 +47,7 @@ export default function Navigation() {
                 />
               
               </div>
-              <h1 className=' text-2xl font-bold'>MangIpul</h1>
+              <h1 className=' text-2xl font-bold'>Mang Ipul</h1>
             </Link>
           </div>
 

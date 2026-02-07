@@ -89,7 +89,7 @@ export default function Testimonials() {
         <div className="text-center animate-on-scroll">
           <h2 className="text-3xl font-bold text-dark">Apa Kata Pelanggan Kami</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Testimoni dari pelanggan setia yang sudah merasakan kelezatan jajanan Mang Ipul.
+           dari pelanggan setia yang sudah merasakan kelezatan jajanan Mang Ipul.
           </p>
         </div>
       </div>
@@ -114,18 +114,7 @@ export default function Testimonials() {
       </div>
       
       {/* Pause/Play Button */}
-      <div className="text-center mt-12">
-        <button
-          onClick={() => setIsPaused(!isPaused)}
-          className={`px-6 py-2 font-medium rounded-lg transition duration-300 ${
-            isPaused 
-              ? 'bg-green-500 text-white hover:bg-green-600' 
-              : 'bg-primary text-white hover:bg-orange-600'
-          }`}
-        >
-          {isPaused ? '▶️ Lanjutkan Animasi' : '⏸️ Jeda Animasi'}
-        </button>
-      </div>
+  
     </section>
   );
 }

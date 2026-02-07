@@ -26,7 +26,7 @@ export default function About() {
         <div className="text-center animate-on-scroll">
           <h2 className="text-3xl font-bold text-dark">Kenapa Memilih Mang Ipul?</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Lebih dari sekadar jajanan, ini adalah warisan rasa keluarga yang kami jaga sejak 2010.
+           Kami menyajikan rasa yang luar biasa namun hemat di kantong
           </p>
         </div>
 
@@ -34,12 +34,12 @@ export default function About() {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`bg-light p-6 rounded-lg shadow-sm hover-lift transition-all duration-300 about-card animate-on-scroll`}
+              className={`bg-orange-800 p-6 rounded-lg shadow-sm hover-lift transition-all duration-300 about-card animate-on-scroll`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-3xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-dark">{feature.title}</h3>
-              <p className="mt-2 text-gray-600">{feature.description}</p>
+            
+              <h3 className="text-xl text-white underline font-semibold ">{feature.title}</h3>
+              <p className="mt-2 text-gray-100">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -48,20 +48,20 @@ export default function About() {
           <div>
             <h3 className="text-2xl font-bold text-dark mb-4">Cerita Kami</h3>
             <p className="text-gray-600 mb-4">
-              Dimulai dari warung kecil di depan rumah pada tahun 2010, Mang Ipul memulai perjalanannya 
-              dengan satu tujuan: menghadirkan jajanan mie yang lezat dan terjangkau untuk semua orang.
+              Dimulai dari racikan resep sederhana, Mang Ipul memulai perjalanannya 
+              dengan satu tujuan: menghadirkan jajanan yang lezat dan terjangkau untuk semua orang.
             </p>
             <p className="text-gray-600 mb-4">
-              Dengan resep rahasia keluarga yang telah disempurnakan selama bertahun-tahun, setiap porsi 
+              Dengan resep sederhana yang telah disempurnakan selama bertahun-tahun, setiap porsi 
               yang kami sajikan adalah bukti cinta dan dedikasi terhadap kualitas.
             </p>
             <div className="flex items-center space-x-4 mt-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">13+</div>
+                <div className="text-2xl font-bold text-primary">10+</div>
                 <div className="text-sm text-gray-600">Tahun Berpengalaman</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">5000+</div>
+                <div className="text-2xl font-bold text-primary">10000+</div>
                 <div className="text-sm text-gray-600">Pelanggan Setia</div>
               </div>
               <div className="text-center">
@@ -76,10 +76,7 @@ export default function About() {
               alt="Warung Mang Ipul"
               className="rounded-lg shadow-lg"
             />
-            <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
-              <div className="font-bold text-primary">Mang Ipul</div>
-              <div className="text-sm text-gray-600">Founder & Chef</div>
-            </div>
+           
           </div>
         </div>
       </div>

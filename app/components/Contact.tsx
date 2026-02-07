@@ -1,6 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faMapMarkerAlt, 
+  faPhone, 
+  faEnvelope,
+  faPaperPlane,
+  faSpinner
+} from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -43,38 +52,38 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: '📍',
+      icon: faMapMarkerAlt,
       title: 'Alamat',
-      info: 'Jl. Raya Makanan No. 123, Kec. Lezat, Kota Enak',
-      link: '#',
+      info: 'Jl simpang ledok, RT.05/RW.3, Krajan, Pakisjajar, Kec. Pakis, Kabupaten Malang, Jawa Timur 65154',
+      link: 'https://maps.google.com/?q=Jl.+Raya+Makanan+No.+123,+Kec.+Lezat,+Kota+Enak',
+      color: 'text-red-500',
+      bgColor: 'bg-red-50',
     },
     {
-      icon: '📞',
-      title: 'Telepon',
-      info: '(021) 1234-5678',
-      link: 'tel:+622112345678',
-    },
-    {
-      icon: '📱',
+      icon: faWhatsapp,
       title: 'WhatsApp',
       info: '+62 812-3456-7890',
       link: 'https://wa.me/6281234567890',
+      color: 'text-green-500',
+      bgColor: 'bg-green-50',
     },
     {
-      icon: '📧',
+      icon: faEnvelope,
       title: 'Email',
       info: 'order@mangipul.com',
       link: 'mailto:order@mangipul.com',
+      color: 'text-yellow-500',
+      bgColor: 'bg-yellow-50',
     },
   ];
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+    <section id="contact" className="py-16 bg-gray-100 text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center animate-on-scroll">
-          <h2 className="text-3xl font-bold">Pesan Sekarang</h2>
+          <h2 className="text-3xl font-bold">Kirim Masukan</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Isi form di bawah untuk memesan atau konsultasi kebutuhan jajanan Anda.
+            Masukan anda sangat berharga bagi kami
           </p>
         </div>
 
@@ -82,37 +91,35 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="lg:col-span-1 animate-on-scroll">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-6">Info Kontak</h3>
+          
               <div className="space-y-6">
                 {contactInfo.map((item) => (
                   <a
                     key={item.title}
                     href={item.link}
-                    className="flex items-start space-x-4 hover:opacity-80 transition-opacity duration-300"
+                    className="flex items-center space-x-4 p-4 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className="text-2xl">{item.icon}</div>
-                    <div>
-                      <h4 className="font-semibold">{item.title}</h4>
-                      <p className="text-white/90">{item.info}</p>
+                    <div className={`flex-shrink-0 ${item.bgColor} ${item.color} p-3 rounded-full group-hover:scale-110 transition-transform duration-300`}>
+                      <FontAwesomeIcon 
+                        icon={item.icon} 
+                        className="w-5 h-5"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-900 group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-sm mt-1">{item.info}</p>
+                    </div>
+                    <div className={`text-gray-400 group-hover:text-primary transition-colors duration-300`}>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   </a>
                 ))}
-              </div>
-              
-              <div className="mt-8">
-                <h4 className="font-semibold mb-4">Jam Operasional</h4>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Senin - Jumat</span>
-                    <span>08:00 - 21:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sabtu - Minggu</span>
-                    <span>09:00 - 22:00</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -157,40 +164,6 @@ export default function Contact() {
               </div>
 
               <div className="mt-6">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Nomor WhatsApp *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                  placeholder="0812-3456-7890"
-                />
-              </div>
-
-              <div className="mt-6">
-                <label htmlFor="orderType" className="block text-sm font-medium text-gray-700 mb-1">
-                  Jenis Pesanan *
-                </label>
-                <select
-                  id="orderType"
-                  name="orderType"
-                  value={formData.orderType}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                >
-                  <option value="general">Pemesanan Umum</option>
-                  <option value="catering">Catering Acara</option>
-                  <option value="bulk">Pembelian Grosir</option>
-                  <option value="consultation">Konsultasi Menu</option>
-                </select>
-              </div>
-
-              <div className="mt-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Detail Pesanan *
                 </label>
@@ -206,27 +179,24 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="mt-6">
+              <div className="mt-8">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 bg-primary text-white font-medium rounded-md hover:bg-orange-600 transition duration-300 hover-lift disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 bg-primary text-white font-medium rounded-md hover:bg-orange-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
-                    <span className="flex items-center justify-center">
-                      <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-                      </svg>
-                      Mengirim...
-                    </span>
+                    <>
+                      <FontAwesomeIcon icon={faSpinner} className="w-5 h-5 animate-spin" />
+                      <span>Mengirim...</span>
+                    </>
                   ) : (
-                    'Kirim Pesanan'
+                    <>
+                      <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                      <span>Kirim Masukan</span>
+                    </>
                   )}
                 </button>
-                <p className="mt-3 text-sm text-gray-600 text-center">
-                  * Kami akan membalas pesanan Anda dalam 1x24 jam.
-                </p>
               </div>
             </form>
           </div>

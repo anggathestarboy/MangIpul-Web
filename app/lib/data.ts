@@ -125,25 +125,25 @@ export const features = [
   {
     id: 1,
     title: "Bumbu Rahasia",
-    description: "Resep turun temurun keluarga dengan bumbu pilihan yang membuat setiap gigitan berkesan.",
-    icon: "🍜"
+    description: "Menggunakan rempah rempah pilihan untuk menghadirkan cita rasa yang tak mengecewakan",
+   
   },
   {
     id: 2,
     title: "Bahan Segar",
-    description: "Hanya menggunakan bahan-bahan segar dan berkualitas tinggi untuk rasa terbaik.",
-    icon: "🥬"
+    description: "Hanya menggunakan bahan-bahan segar dan berkualitas untuk rasa terbaik.",
+    
   },
   {
     id: 3,
     title: "Hygienis",
     description: "Proses pembuatan yang bersih dan higienis sesuai standar kesehatan.",
-    icon: "🧼"
+   
   },
   {
     id: 4,
     title: "Harga Terjangkau",
     description: "Rasa premium dengan harga yang ramah di kantong semua kalangan.",
-    icon: "💰"
+   
   }
 ];
