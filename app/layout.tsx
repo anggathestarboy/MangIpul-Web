@@ -7,10 +7,37 @@ const poppins = Poppins({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: 'Mang Ipul UMKM - Jajanan Mie Spesial',
-  description: 'UMKM Mang Ipul menyediakan berbagai jajanan mie, mie lidi, dan makaroni dengan resep spesial keluarga',
-}
+export const metadata = {
+  title: "Mang Ipul - Jajanan Snack Enak & Lezat | Makroni, Mie & Mie Lidi Pedas",
+  description: "Mang Ipul menyediakan berbagai macam jajanan snack lezat seperti makroni, mie, dan mie lidi pedas. Nikmati cita rasa gurih dan pedas yang menggugah selera!",
+  keywords: "snack, jajanan, makroni, mie lidi pedas, mie pedas, camilan, makanan ringan, Mang Ipul",
+  authors: [{ name: "Mang Ipul" }],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+   verification: {
+    google: "nNKuI2XYFZPj2T72QHx-xbbgiKJE4cqFEnhX5D3LIEk",
+  },
+  openGraph: {
+    title: "Mang Ipul - Jajanan Snack Enak & Lezat",
+    description: "Berbagai macam jajanan snack lezat seperti makroni, mie, dan mie lidi pedas",
+    url: "https://mangipul.vercel.app",
+    siteName: "Mang Ipul",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mang Ipul - Jajanan Snack Enak",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mang Ipul - Jajanan Snack Enak & Lezat",
+    description: "Berbagai macam jajanan snack lezat seperti makroni, mie, dan mie lidi pedas",
+  },
+};
 
 export default function RootLayout({
   children,
