@@ -1,26 +1,462 @@
-@import "tailwindcss";
+/* Import Tailwind CSS */
+@import 'tailwindcss';
 
+/* Custom CSS Variables dan Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #FF7F11;    /* Orange - Makanan */
+  --color-secondary: #ACBFA4;  /* Green - Sehat */
+  --color-light: #E2E8CE;      /* Cream */
+  --color-dark: #262626;       /* Dark gray */
+  
+  --font-poppins: 'Poppins', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Tailwind Theme Configuration */
+@theme {
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
+  
+  /* Font Family */
+  --font-family-poppins: var(--font-poppins);
+  
+  /* Animation Durations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-scroll-right: scrollRight 40s linear infinite;
+  --animate-scroll-left: scrollLeft 35s linear infinite;
+  
+  /* Keyframes */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 
+/* Custom Base Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins);
+  scroll-behavior: smooth;
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+/* Custom Utility Classes */
+.text-gradient-food {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation */
+nav.scrolled {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+  transition: all 0.3s ease;
+}
+
+/* Product Card Styles */
+.product-card {
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Testimonial Section */
+.testimonial-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.testimonial-track-1 {
+  animation: var(--animate-scroll-right);
+}
+
+.testimonial-track-2 {
+  animation: var(--animate-scroll-left);
+}
+
+.testimonial-card {
+  flex-shrink: 0;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin: 0 20px;
+  transition: transform 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-content {
+  font-style: italic;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.testimonial-content::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 48px;
+  color: var(--color-primary);
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+.author-info h4 {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.author-info p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.testimonial-overlay-left,
+.testimonial-overlay-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.testimonial-overlay-left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.testimonial-overlay-right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.star {
+  color: #fbbf24;
+}
+
+/* Pause button styling */
+#pause-testimonial.paused {
+  background-color: #10b981;
+}
+
+#pause-testimonial.paused:hover {
+  background-color: #059669;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e06e0f;
+}
+
+/* Form styles */
+.form-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 127, 17, 0.2);
+}
+
+/* Button styles */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animations */
+.animate-float {
+  animation: var(--animate-float);
+}
+
+.animate-pulse-slow {
+  animation: var(--animate-pulse-slow);
+}
+
+.animate-spin-slow {
+  animation: var(--animate-spin-slow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 300px;
+    padding: 20px;
+    margin: 0 15px;
+  }
+  
+  .testimonial-overlay-left,
+  .testimonial-overlay-right {
+    width: 80px;
+  }
+  
+  .testimonial-track-1 {
+    animation-duration: 30s;
+  }
+  
+  .testimonial-track-2 {
+    animation-duration: 25s;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-buttons a:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    width: 280px;
+    padding: 18px;
+    margin: 0 10px;
+  }
+  
+  .testimonial-overlay-left,
+  .testimonial-overlay-right {
+    width: 50px;
+  }
+}
+
+/* Section padding for anchor links */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Staggered animations */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* Glowing effect */
+.glow {
+  box-shadow: 0 0 15px rgba(255, 127, 17, 0.5);
+}
+
+/* Floating elements */
+.floating {
+  position: relative;
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Game card animation (keep for consistency) */
+.game-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.game-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typography enhancements */
+.font-primary {
+  font-family: var(--font-poppins);
+}
+
+/* Custom color utility classes (for backward compatibility) */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-light {
+  color: #ffa54d; /* Lighter orange */
+}
+
+.text-primary-dark {
+  color: #e06e0f; /* Darker orange */
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-light {
+  background-color: var(--color-light);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: #e06e0f; /* Darker orange */
 }
