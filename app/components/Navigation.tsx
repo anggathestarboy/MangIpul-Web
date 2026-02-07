@@ -18,11 +18,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Tentang', href: '#about' },
-    { label: 'Produk', href: '#products' },
-    { label: 'Testimoni', href: '#testimonials' },
-    { label: 'Kontak', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Tentang', href: '/About' },
+    { label: 'Produk', href: '/products' },
+    { label: 'Testimoni', href: '/#testimonials' },
+    { label: 'Kontak', href: '/Contact' },
   ];
 
   return (
@@ -55,31 +55,31 @@ export default function Navigation() {
           <div className="hidden md:flex items-center justify-center flex-1">
             <div className="flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="text-dark hover:text-primary font-medium transition-colors duration-300"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Button di Kanan (Desktop) */}
           <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-            <a
+            <Link
               href="/login"
               className="px-4 py-2 text-dark font-medium hover:text-primary transition-colors duration-300"
             >
               Masuk
-            </a>
-            <a
+            </Link>
+            <Link
               href="/register"
               className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-600 transition duration-300"
             >
               Daftar
-            </a>
+            </Link>
           
           </div>
 
@@ -125,20 +125,20 @@ export default function Navigation() {
               </a>
             ))}
             <div className="pt-2 border-t border-gray-200 space-y-2">
-              <a
+              <Link
                 href="/login"
                 className="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50 transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Masuk
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/register"
                 className="block px-3 py-2 bg-primary text-white font-medium rounded-md hover:bg-orange-600 transition duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Daftar
-              </a>
+              </Link>
            
             </div>
           </div>

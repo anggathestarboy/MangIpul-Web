@@ -11,6 +11,7 @@ import {
   faUtensils,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
+import HeroPage from './HeroPage';
 
 export default function DetailAbout() {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,36 +51,8 @@ export default function DetailAbout() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh]  after:bg-black/50 min-h-[500px] w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero.jpeg" // Ganti dengan gambar hero Anda
-            alt="Tentang Mang Ipul"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-        </div>
-        
-        {/* Hero Content */}
-        <div className="relative h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className={`transform transition-all duration-1000 delay-300 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}>
-              <h1 className="text-5xl md:text-7xl font-bold text-center text-white mb-6">
-                <span className="block">Tentang Kami</span>
-              </h1>
-            </div>
-          </div>
-        </div>
-
-     
-      </section>
-
+ 
+<HeroPage namaPage="Tentang Kami"/>
       {/* Main Content Section - Gambar Kiri, Teks Kanan */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
