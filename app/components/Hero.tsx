@@ -10,7 +10,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-orange-400">
+    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 bg-orange-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -44,7 +44,7 @@ export default function Hero() {
             >
               <a
                 href="#products"
-                className="px-6 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-600 transition duration-300 text-center hover-lift"
+                className="px-6 py-3 bg-orange-900 text-white font-medium rounded-lg hover:bg-orange-600 transition duration-300 text-center hover-lift"
               >
                 Pesan Sekarang
               </a>
