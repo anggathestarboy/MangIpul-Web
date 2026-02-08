@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { products, Product } from '../lib/data';
 
-export default function Products() {
+export default function DetailProducts() {
   const [filter, setFilter] = useState<string>('semua');
 
   const categories = ['semua', ...Array.from(new Set(products.map(p => p.category)))];
@@ -29,7 +29,7 @@ export default function Products() {
   }, [filteredProducts]);
 
   return (
-    <section id="products" className="py-16 bg-gray-100">
+    <section id="products" className="py-16 bg-gray-100 mt-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-dark">Produk Unggulan Kami</h2>
@@ -46,7 +46,7 @@ export default function Products() {
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                 filter === category
-                  ? 'bg-orange-700 text-white'
+                  ? 'bg-primary text-white'
                   : 'bg-white text-dark hover:bg-gray-100'
               }`}
             >
@@ -69,21 +69,21 @@ export default function Products() {
                   alt={product.title}
                   className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-orange-700 text-white px-3 py-1 rounded-full text-sm font-medium">
+                <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                   {product.category}
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start">
                   <h3 className="text-xl font-bold text-dark">{product.title}</h3>
-                  <span className="text-lg font-bold text-orange-700">
+                  <span className="text-lg font-bold text-primary">
                     Rp{product.price.toLocaleString('id-ID')}
                   </span>
                 </div>
                 <p className="mt-3 text-gray-600">{product.description}</p>
                 <div className="mt-4 flex justify-between items-center">
-                  <button className="px-4 py-2 border border-orange-700 text-orange-700 font-medium rounded-lg hover:bg-orange-50 transition duration-300">
-                   Lihat Detail
+                  <button className="px-4 py-2 border border-primary text-primary font-medium rounded-lg hover:bg-orange-50 transition duration-300">
+                    Detail
                   </button>
                 </div>
               </div>

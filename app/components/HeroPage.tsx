@@ -50,7 +50,7 @@ const HeroPage = ({namaPage}: any) => {
       ];
   return (
     <div>
-           <section className="relative h-[70vh]  after:bg-black/50 min-h-[500px] w-full overflow-hidden">
+           <section className="relative h-[8vh]  after:bg-black/50 min-h-[350px] w-full overflow-hidden">
               <div className="absolute inset-0">
                 <Image
                   src="/hero.jpeg" // Ganti dengan gambar hero Anda

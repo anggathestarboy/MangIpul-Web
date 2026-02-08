@@ -20,7 +20,7 @@ export default function Navigation() {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Tentang', href: '/About' },
-    { label: 'Produk', href: '/products' },
+    { label: 'Produk', href: '/Products' },
     { label: 'Testimoni', href: '/#testimonials' },
     { label: 'Kontak', href: '/Contact' },
   ];
@@ -67,21 +67,36 @@ export default function Navigation() {
           </div>
 
           {/* Button di Kanan (Desktop) */}
-          <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-            <Link
-              href="/login"
-              className="px-4 py-2 text-dark font-medium hover:text-primary transition-colors duration-300"
-            >
-              Masuk
-            </Link>
-            <Link
-              href="/register"
-              className="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-orange-600 transition duration-300"
-            >
-              Daftar
-            </Link>
-          
-          </div>
+  <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
+  <Link
+    href="/login"
+    className="
+      px-4 py-2
+      border border-orange-700
+      text-orange-700 font-medium
+      rounded-lg
+      hover:bg-orange-500 hover:text-white
+      transition duration-300
+    "
+  >
+    Masuk
+  </Link>
+
+  <Link
+    href="/register"
+    className="
+      px-4 py-2
+      bg-orange-700 text-white
+      font-medium
+      rounded-lg
+      hover:bg-orange-400
+      transition duration-300
+    "
+  >
+    Daftar
+  </Link>
+</div>
+
 
           {/* Mobile Menu Button (Kanana) */}
           <div className="flex items-center md:hidden">

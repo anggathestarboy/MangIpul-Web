@@ -49,7 +49,7 @@ export default function DetailAbout() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white ">
       {/* Hero Section */}
  
 <HeroPage namaPage="Tentang Kami"/>

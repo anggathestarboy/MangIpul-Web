@@ -28,11 +28,11 @@ export default function Footer() {
   }, []);
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Tentang Kami', href: '#about' },
-    { label: 'Produk', href: '#products' },
-    { label: 'Testimoni', href: '#testimonials' },
-    { label: 'Kontak', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Tentang Kami', href: '/About' },
+    { label: 'Produk', href: '/Products' },
+    { label: 'Testimoni', href: '/#testimonials' },
+    { label: 'Kontak', href: '/Contact' },
   ];
 
   const productsLinks = [
