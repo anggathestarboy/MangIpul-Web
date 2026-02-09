@@ -47,7 +47,7 @@ export default function Navigation() {
                 />
               
               </div>
-              <h1 className=' text-2xl font-bold'>Mang Ipul</h1>
+              <h1 className=' text-2xl font-bold'>Mangs Ipul</h1>
             </Link>
           </div>
 
@@ -69,7 +69,7 @@ export default function Navigation() {
           {/* Button di Kanan (Desktop) */}
   <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
   <Link
-    href="/login"
+    href="/Login"
     className="
       px-4 py-2
       border border-orange-700
@@ -141,7 +141,7 @@ export default function Navigation() {
             ))}
             <div className="pt-2 border-t border-gray-200 space-y-2">
               <Link
-                href="/login"
+                href="/Login"
                 className="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50 transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
