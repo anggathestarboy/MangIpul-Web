@@ -1,5 +1,7 @@
 /* Import Tailwind CSS */
 @import 'tailwindcss';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 /* Custom CSS Variables dan Theme */
 :root {
