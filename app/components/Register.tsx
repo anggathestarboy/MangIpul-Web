@@ -27,7 +27,7 @@ import {
 } from 'react-icons/fc';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 
-const Login = () => {
+const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -173,7 +173,7 @@ const Login = () => {
             <div className="text-center mb-8 lg:mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C2410C] to-[#e05a1a]">
-                Masuk
+                Daftar
                 </span>
               </h2>
         
@@ -221,6 +221,29 @@ const Login = () => {
                 </div>
               </div>
               
+              <div>
+                <label className="block text-gray-700 text-sm font-medium mb-3" htmlFor="username">
+                  <FaUserCircle className="inline mr-2 text-[#C2410C]" />
+                  Nama Lengkap
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C2410C] focus:border-transparent transition-all duration-300"
+                    placeholder="contoh: user@email.com"
+                    required
+                    autoComplete="username"
+                  />
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <FaEnvelope />
+                  </div>
+                </div>
+              </div>
+             
               {/* Password Field */}
               <div>
                 <div className="flex justify-between items-center mb-3">
@@ -228,16 +251,41 @@ const Login = () => {
                     <FaLock className="inline mr-2 text-[#C2410C]" />
                     Password
                   </label>
-                  <a 
-                    href="#" 
-                    className="text-sm text-[#C2410C] font-medium hover:underline transition-all duration-300"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      // Handle forgot password
-                    }}
+                
+                </div>
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-12 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C2410C] focus:border-transparent transition-all duration-300"
+                    placeholder="masukkan password"
+                    required
+                    autoComplete="current-password"
+                  />
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <FaKey />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className={`absolute right-4 top-1/2 transform -translate-y-1/2 transition-all duration-300 ${
+                      showPassword ? 'text-[#C2410C]' : 'text-gray-500 hover:text-[#C2410C]'
+                    }`}
                   >
-                    Lupa password?
-                  </a>
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="block text-gray-700 text-sm font-medium" htmlFor="password">
+                    <FaLock className="inline mr-2 text-[#C2410C]" />
+                   Ulangi Password
+                  </label>
+                
                 </div>
                 <div className="relative">
                   <input
@@ -336,4 +384,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

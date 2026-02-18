@@ -83,7 +83,7 @@ export default function Navigation() {
   </Link>
 
   <Link
-    href="/register"
+    href="/Register"
     className="
       px-4 py-2
       bg-orange-700 text-white
@@ -148,7 +148,7 @@ export default function Navigation() {
                 Masuk
               </Link>
               <Link
-                href="/register"
+                href="/Register"
                 className="block px-3 py-2 bg-primary text-white font-medium rounded-md hover:bg-orange-600 transition duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
